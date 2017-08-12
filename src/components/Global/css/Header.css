@@ -26,3 +26,7 @@
   display: inline-block;
   padding-right: 10px;
 }
+
+.Menu li a:hover {
+  color: #808080
+}
