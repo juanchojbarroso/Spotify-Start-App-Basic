@@ -27,6 +27,11 @@
   padding-right: 10px;
 }
 
+.Menu li a {
+    color: #CCC;
+    text-decoration: none;
+}
+
 .Menu li a:hover {
-  color: #808080
+    color: #EEE;
 }
