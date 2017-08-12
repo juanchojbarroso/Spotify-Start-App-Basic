@@ -11,7 +11,8 @@ class Content extends Component {
     this.state = {
       count:0,
       number1:0,
-      number2:0
+      number2:0,  
+      result:0
     };
 
    this.handleCountClick = this.handleCountClick.bind(this);
@@ -36,19 +37,33 @@ class Content extends Component {
         })
      }else{
        this.setState({
-         count: 0
+         count: 0,
+         number1: 0,
+         number2: 0,
+         result:0
+
        })
      }
   }
 
   handleResultClick(e){
-
-    this.state.number1 + this.state.number2 
+    this.setState({
+        result: this.state.number1 + this.state.number2
+      });
   }
 
   handleInputChange(e){
-
+    if(e.target.id === 'number1'){
+      this.setState({
+        number1: Number(e.target.value)
+      });
+    }else {
+      this.setState({
+        number2: Number(e.target.value)
+      });
+    }    
   }
+  
   
 
   render() {
@@ -70,6 +85,8 @@ class Content extends Component {
           <input id="number2" type="number" value={this.state.number2} onChange={this.handleInputChange}/>
           
           <button id="result" onClick ={this.handleResultClick}>=</button>
+
+          {this.state.result}
         </p>
       </div>
     );
